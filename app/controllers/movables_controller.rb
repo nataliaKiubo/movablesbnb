@@ -11,6 +11,7 @@ class MovablesController < ApplicationController
   end
 
   # GET /movables/new
+
   def new
     @movable = Movable.new
   end
