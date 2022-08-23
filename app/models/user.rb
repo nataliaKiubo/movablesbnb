@@ -8,5 +8,4 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_many :movables, dependent: :destroy # from the provider perspective
   has_many :bookings # from the renter perspective
-  has_attachment :photo
 end
