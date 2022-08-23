@@ -8,12 +8,12 @@
     <%= f.input :description %>
     <%= f.input :min_rent_time %>
     <%= f.input :max_rent_time %>
-    <%= f.input :main_image %>
-    <%= f.input :gallery_image %>
+    <%= f.input :main_image, as: :file %>
+    <%= f.input :gallery_image, as: :file, input_html: { multiple: true } %>
     <%= f.input :stock %>
     <%= f.input :price %>
     <%= f.association :user %>
-    <%= f.input :categories %>
+    <%= f.input :categories, collection: %w(Armchairs Sofas Chairs Tables Lights Rugs Beds Decorations Plants) %>
   </div>
 
   <div class="form-actions">
