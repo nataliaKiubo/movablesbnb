@@ -65,6 +65,6 @@ class MovablesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movable_params
-      params.require(:movable).permit(:name, :description, :min_rent_time, :max_rent_time, :main_image, :gallery_image, :stock, :price, :user_id, :categories)
+      params.require(:movable).permit(:name, :description, :min_rent_time, :max_rent_time, :main_image, :stock, :price, :user_id, :categories, gallery_image: [])
     end
 end
