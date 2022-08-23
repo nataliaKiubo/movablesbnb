@@ -1,6 +1,13 @@
+// navbar styles
+
+.container-fluid {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(233, 233, 233);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,6 +18,7 @@
   width: 40px;
 }
 
+// Search button styles
 .search-form-control {
   position: relative;
 }
