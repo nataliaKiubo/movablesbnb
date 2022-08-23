@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@movable) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :min_rent_time %>
+    <%= f.input :max_rent_time %>
+    <%= f.input :main_image %>
+    <%= f.input :gallery_image %>
+    <%= f.input :stock %>
+    <%= f.input :price %>
+    <%= f.association :user %>
+    <%= f.input :categories %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

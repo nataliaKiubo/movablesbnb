@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Movables</h1>
+
+<div id="movables">
+  <% @movables.each do |movable| %>
+    <%= render movable %>
+    <p>
+      <%= link_to "Show this movable", movable %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New movable", new_movable_path %>
