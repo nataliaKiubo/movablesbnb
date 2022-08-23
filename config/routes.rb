@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/edit'
+  get 'users/update'
+  get 'users/show'
   resources :movables
   devise_for :users
   root to: "pages#home"
