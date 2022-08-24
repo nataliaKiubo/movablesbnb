@@ -35,6 +35,56 @@
   margin: 50px auto;
 }
 
+
+.movable-description {
+  width: 66%;
+  margin-right: 4%;
+}
+
+.movable-description p {
+  text-align: justify;
+}
+
+.booking-part {
+  width: 33%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 4%;
+}
+
+.movable-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.booking-dates {
+  display: flex;
+  justify-content: space-between;
+}
+.booking-date {
+  border-radius: 5%;
+  border: 1px solid grey;
+  padding: 2%;
+  width: 49%;
+}
+
+a.book-button {
+  width: 100%;
+  padding: 5%;
+  background-color: #ff4725;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+
+a.book-button:hover {
+  background-color: #f55033;
+}
+
+.items-calc {
+  margin: 15px 0 20px;
+}
+
 // cards category styles paragraphs
 
 a.card-category {
