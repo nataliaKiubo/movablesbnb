@@ -4,7 +4,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 200px 0;
   display: block;
 }
 
@@ -32,11 +32,21 @@
   padding: 40px;
 }
 
+.container {
+  margin: 50px auto;
+}
+
 // cards category styles paragraphs
 
-.card-category p {
-  color: white;
-  padding: 10px;
+a.card-category {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f9f9f9;
+  color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 // Smallest device

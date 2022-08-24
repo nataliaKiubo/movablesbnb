@@ -1,8 +1,7 @@
 // navbar styles
 
 .container-fluid {
-  padding-top: 30px;
-  padding-bottom: 20px;
+  padding: 10px;
 }
 
 .navbar-lewagon {
@@ -16,6 +15,10 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+a.navbar-brand {
+  margin-left: 24px;
 }
 
 // Search button styles

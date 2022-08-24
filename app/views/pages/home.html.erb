@@ -1,5 +1,5 @@
   <%# banner structure %>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.ibb.co/vZGjLY0/jonathan-borba-4k8-q1f0-Grw-unsplash-1.jpg);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661337017/Mood_image-H_eecld9.jpg);">
 
     <div class="container">
       <h1>for anyone who wants to <strong> furnish </strong></h1>
@@ -13,42 +13,41 @@
 
 <%# CATEGORYS: Armchairs Sofas Chairs Tables Lights Rugs Beds Decorations Plants %>
   <%# cards grid structure %>
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+<div class="cards container">
 
-    <%= link_to "Armchairs", movables_path(categories: "Armchairs") %>
+  <a href="<%= movables_path(categories: "Armchairs") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335387/Armchairs_cbucuk.jpg)">
+    Armchairs
+  </a>
 
-  </div>
+  <a href="<%= movables_path(categories: "Sofas") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335387/Sofas_rbgfvo.jpg)">
+    Sofas
+  </a>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    <p> Sofas </p>
-  </div>
+    <a href="<%= movables_path(categories: "Chairs") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335388/Chairs_xqhs9t.jpg)">
+    Chairs
+  </a>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    <p> Chairs </p>
-  </div>
+  <a href="<%= movables_path(categories: "Tables") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335388/Tables_fcbtyh.jpg)">
+    Tables
+  </a>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <p> Tables </p>
-  </div>
+    <a href="<%= movables_path(categories: "Lights") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335388/Lights_inkwqb.jpg)">
+    Lights
+  </a>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    <p> Lights</p>
-  </div>
+    <a href="<%= movables_path(categories: "Rugs") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335388/Rugs_kqcnzj.jpg)">
+    Tables
+  </a>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    <p> Rugs </p>
-  </div>
+    <a href="<%= movables_path(categories: "Beds") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335387/Beds_gsy2pn.jpg)">
+    Beds
+  </a>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <p> Beds </p>
-  </div>
+    <a href="<%= movables_path(categories: "Decorations") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335388/Decorations_xafdc9.jpg)">
+    Decorations
+  </a>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    <p> Decorations </p>
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    <p> Plants </p>
-  </div>
+    <a href="<%= movables_path(categories: "Plants") %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddxqnyga2/image/upload/v1661335388/Plants_iwdssu.jpg)">
+    Plants
+  </a>
 </div>
