@@ -1,10 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @movable %>
+<%# <%= render @movable %>
+
+
+<div class="container">
+  <h1><%= @movable.name %></h1>
+  <div class="images">
+    <%= cl_image_tag @movable.main_image.key, crop: :fill %>
+    <div class="gallery-wall">
+    <% @movable.gallery_image.each do |gallery_image| %>
+      <%= cl_image_tag gallery_image.key, crop: :fill %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="description container">
+    <p><%= @movable.description %></p>
+  </div>
 
 <div>
   <%= link_to "Edit this movable", edit_movable_path(@movable) %> |
   <%= link_to "Back to movables", movables_path %>
 
   <%= button_to "Destroy this movable", @movable, method: :delete %>
+</div>
 </div>
