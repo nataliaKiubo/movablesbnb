@@ -1,14 +1,21 @@
+<div class="container">
 <p style="color: green"><%= notice %></p>
 
-<h1>Movables</h1>
+<h1><%= params[:categories] %></h1>
 
-<div id="movables">
+<div class="cards">
   <% @movables.each do |movable| %>
-    <%= render movable %>
-    <p>
-      <%= link_to "Show this movable", movable %>
-    </p>
+    <a class="card-trip" href="<%= movable_path(movable.id) %>">
+      <%= cl_image_tag movable.main_image.key, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= movable.name %></h2>
+          <p><%= movable.description %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= movable.price %> CHF / day</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </a>
   <% end %>
 </div>
-
-<%= link_to "New movable", new_movable_path %>
+</div>

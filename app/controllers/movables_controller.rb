@@ -3,7 +3,11 @@ class MovablesController < ApplicationController
 
   # GET /movables or /movables.json
   def index
-    @movables = Movable.all
+    if params[:categories]
+      @movables = Movable.where(categories: params[:categories])
+    else
+      @movables = Movable.all
+    end
   end
 
   # GET /movables/1 or /movables/1.json
