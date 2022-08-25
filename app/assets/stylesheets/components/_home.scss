@@ -94,9 +94,50 @@ a.book-button:hover {
   background-color: #f55033;
 }
 
+.signup-button {
+  width: 20%;
+  padding: 1%;
+  background-color: #ff4725;
+  color: #fff;
+  text-align: center;
+  display: block;
+  text-align: center;
+}
+
+.signup-button:hover {
+  background-color: #f55033;
+  color: #fff;
+}
+
+.edit-button {
+  width: 100%;
+  padding: 1%;
+  background-color: #ff4725;
+  color: #fff;
+  text-align: center;
+  display: block;
+  text-align: center;
+}
+
+
+.edit-button:hover {
+  background-color: #f55033;
+  color: #fff;
+}
+
+
 .items-calc {
   margin: 15px 0 20px;
 }
+
+
+.edit-part {
+  width: 33%;
+  background-color: #E9E9E9;
+  padding: 4%;
+  border-radius: 4%;
+}
+
 
 // cards category styles paragraphs
 
