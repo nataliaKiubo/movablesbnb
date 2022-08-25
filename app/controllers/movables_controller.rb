@@ -15,6 +15,15 @@ class MovablesController < ApplicationController
   # GET /movables/1 or /movables/1.json
   def show
     authorize @movable
+
+    # The `geocoded` scope filters only flats/user with coordinates
+    @markers = [
+      {
+        lat: @movable.user.latitude,
+        lng: @movable.user.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: { user: @movable.user }),
+        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
+      }]
   end
 
   # GET /movables/new
