@@ -15,6 +15,7 @@ class MovablesController < ApplicationController
   # GET /movables/1 or /movables/1.json
   def show
     authorize @movable
+    @booking = Booking.new
   end
 
   # GET /movables/new
