@@ -13,7 +13,12 @@
           <p><%= movable.description %></p>
         </div>
         <h2 class="card-trip-pricing"><%= movable.price %> CHF / day</h2>
-        <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+        <%# <%= cl_image_tag current_user.photo.key, crop: :fill, class: "card-trip-user avatar" %>
+        <% if movable.main_image.key %>
+          <%= cl_image_tag movable.main_image.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <% else %>
+          <%= cl_image_tag "https://res.cloudinary.com/ddxqnyga2/image/upload/v1661437338/001-user_vutg9d.png", crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
       </div>
     </a>
   <% end %>
