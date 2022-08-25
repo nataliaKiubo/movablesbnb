@@ -1,17 +1,14 @@
-<div id="<%= dom_id user %>">
+<div>
+  <div>
+  <%= image_tag "https://i.ibb.co/r5dWwS6/exqdnwsaixxpsrkygl2e.jpg", class: "avatar-bordered"%>
+  </div>
+  <br>
   <p>
-    <strong>Your first name:</strong>
+    <strong>First name:</strong>
     <%= user.first_name %>
   </p>
-
   <p>
-    <strong>Your last name:</strong>
+    <strong>Last name:</strong>
     <%= user.last_name %>
   </p>
-
-  <p>
-    <strong>Your email address:</strong>
-    <%= user.email %>
-  </p>
-
 </div>

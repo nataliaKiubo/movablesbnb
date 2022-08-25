@@ -8,14 +8,16 @@
     <%= f.input :description %>
     <%= f.input :min_rent_time %>
     <%= f.input :max_rent_time %>
-    <%= f.input :main_image, as: :file %>
-    <%= f.input :gallery_image, as: :file, input_html: { multiple: true } %>
+    <% if @movable.new_record?%>
+      <%= f.input :main_image, as: :file %>
+      <%= f.input :gallery_image, as: :file, input_html: { multiple: true } %>
+    <% end %>
     <%= f.input :stock %>
     <%= f.input :price %>
     <%= f.input :categories, collection: %w(Armchairs Sofas Chairs Tables Lights Rugs Beds Decorations Plants) %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "signup-button" %>
   </div>
 <% end %>

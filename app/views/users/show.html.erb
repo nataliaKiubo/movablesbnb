@@ -1,10 +1,12 @@
-<h1>My profile</h1>
+<div class="container">
+ <div class="edit-part">
+    <%= render @user %>
 
-<%= render @user %>
+    <div>
+    <% if policy(@user).edit? %>
+      <%= link_to "Edit my profile", edit_user_path(@user), class: "edit-button" %>
+    <% end %>
 
-<div>
-<% if policy(@user).edit? %>
-  <%= link_to "Edit my profile", edit_user_path(@user) %>
-<% end %>
-
+    </div>
+  </div>
 </div>
