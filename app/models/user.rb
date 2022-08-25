@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :movables, dependent: :destroy # from the provider perspective
   has_many :bookings # from the renter perspective
   has_one_attached :photo
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
