@@ -20,8 +20,8 @@ class MovablesController < ApplicationController
   # GET /movables/new
 
   def new
-    authorize @movable
     @movable = Movable.new
+    authorize @movable
   end
 
   # GET /movables/1/edit

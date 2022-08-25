@@ -3,14 +3,17 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    authorize @user
   end
 
   # GET /users/1
   def show
+    authorize @user
   end
 
 # PUT /users/1
   def update
+    authorize @user
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to user_url(@user), notice: "Your profile was successfully updated." }

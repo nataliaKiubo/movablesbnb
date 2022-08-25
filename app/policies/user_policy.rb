@@ -1,13 +1,6 @@
-class MovablePolicy < ApplicationPolicy
-  def index?
-    true
-  end
+class UserPolicy < ApplicationPolicy
 
   def show?
-    true
-  end
-
-  def new?
     true
   end
 
@@ -16,15 +9,7 @@ class MovablePolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
-  end
-
-  def create?
-    record.user == user
-  end
-
-  def destroy?
-    record.user == user
+    record.id == user.id
   end
 
   class Scope < Scope
@@ -32,6 +17,7 @@ class MovablePolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+
     def resolve
       scope.all
     end
