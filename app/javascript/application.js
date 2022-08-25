@@ -2,3 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import "bootstrap-datepicker"
+$('.datepicker').datepicker({ format: 'mm/dd/yyyy', startDate: '-3d' });

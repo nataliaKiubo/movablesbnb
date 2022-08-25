@@ -52,6 +52,11 @@
   border-radius: 4%;
 }
 
+.booking-part p {
+  margin-bottom: 0;
+  padding: 0;
+}
+
 .movable-price {
   font-size: 20px;
   font-weight: bold;
@@ -63,10 +68,18 @@
 }
 .booking-date {
   border-radius: 5%;
-  border: 1px solid grey;
   padding: 2%;
   width: 49%;
 }
+
+.booking-date-picker {
+  display: flex;
+}
+
+.booking-date-picker input {
+  margin-left: 2.5px;
+}
+
 
 a.book-button {
   width: 100%;
