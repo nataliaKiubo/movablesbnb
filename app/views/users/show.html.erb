@@ -1,4 +1,6 @@
 <div class="container">
+  <h4>My personal information</h4>
+  <br>
  <div class="edit-part">
     <%= render @user %>
 
@@ -9,8 +11,23 @@
 
     </div>
   </div>
+
+  <br>
+
+  <h4>My movables</h4>
+  <div class="cards">
+  <% @movables.each do |movable| %>
+    <a class="card-trip" href="<%= movable_path(movable.id) %>">
+      <%= cl_image_tag movable.main_image.key, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= movable.name %></h2>
+          <p><%= movable.description %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= movable.price %> CHF / day</h2>
+        <%# <%= cl_image_tag current_user.photo.key, crop: :fill, class: "card-trip-user avatar" %>
+      </div>
+    </a>
+  <% end %>
+  </div>
 </div>
-
-
-<%# try to build here %>
-<%# or try on movables show %>
