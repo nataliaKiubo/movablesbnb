@@ -15,22 +15,37 @@
   </div>
 
   <div class="description container">
-    <p><%= @movable.description %></p>
+    <div class="movable-description">
+    <p><%= @movable.description %></p></div>
+
+    <div class="booking-part">
+    <p class="movable-price"><%= @movable.price %> CHF / day</p>
+      <div class="booking-dates">
+        <p class="booking-date">Start Date</p>
+        <p class="booking-date">End Date</p>
+      </div>
+      <div class="booking-date-picker">
+        <input type="date" id="start" name="trip-start"
+              value="2018-07-22"
+              min="2022-08-25" max="2023-08-31">
+        <input type="date" id="start" name="trip-start"
+              value="2018-07-22"
+              min="2022-08-25" max="2023-08-31">
+      </div>
+      <p class="items-calc"><i class="fa-solid fa-minus" style="margin-right: 15px;"></i> Items <i class="fa-solid fa-plus" style="margin-left: 15px;"></i></p>
+      <div><a href="#" class="book-button">BOOK NOW</a></div>
+    </div>
+
+    </div>
+
+
+    <div>
+      <%= link_to "Edit this movable", edit_movable_path(@movable) %> |
+      <%= link_to "Back to movables", movables_path %>
+
+      <%= button_to "Destroy this movable", @movable, method: :delete %>
+    </div>
   </div>
 
-<div>
-  <%= link_to "Edit this movable", edit_movable_path(@movable) %> |
-  <%= link_to "Back to movables", movables_path %>
 
-  <%= button_to "Destroy this movable", @movable, method: :delete %>
 </div>
-</div>
-
-
-<input data-controller="booking_date_picker" data-flatpickr-enable-time="true" type="text" name="24/08/22" />
-
-<label for="start">Start date:</label>
-
-<input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2022-08-25" max="2023-08-31">

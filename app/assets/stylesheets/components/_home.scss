@@ -4,7 +4,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 200px 0;
   display: block;
 }
 
@@ -28,15 +28,88 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
-  height: 850px;
   padding: 40px;
+}
+
+.container {
+  margin: 50px auto;
+}
+
+
+.movable-description {
+  width: 66%;
+  margin-right: 4%;
+}
+
+.movable-description p {
+  text-align: justify;
+}
+
+.booking-part {
+  width: 33%;
+  background-color: #fff;
+  padding: 4%;
+  border-radius: 4%;
+}
+
+.booking-part p {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.movable-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.booking-dates {
+  display: flex;
+  justify-content: space-between;
+}
+.booking-date {
+  border-radius: 5%;
+  padding: 2%;
+  width: 49%;
+}
+
+.booking-date-picker {
+  display: flex;
+}
+
+.booking-date-picker input {
+  margin-left: 2.5px;
+}
+
+
+a.book-button {
+  width: 100%;
+  padding: 5%;
+  background-color: #ff4725;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+
+a.book-button:hover {
+  background-color: #f55033;
+}
+
+.items-calc {
+  margin: 15px 0 20px;
 }
 
 // cards category styles paragraphs
 
-.card-category p {
-  color: white;
-  padding: 10px;
+a.card-category {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f9f9f9;
+  color: #fff;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  min-height: 300px;
 }
 
 // Smallest device
