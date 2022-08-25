@@ -13,7 +13,7 @@
           <p><%= movable.description %></p>
         </div>
         <h2 class="card-trip-pricing"><%= movable.price %> CHF / day</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <%= cl_image_tag current_user.photo.key, crop: :fill, class: "card-trip-user avatar" %>
       </div>
     </a>
   <% end %>
