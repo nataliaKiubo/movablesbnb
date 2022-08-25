@@ -1,8 +1,10 @@
 class MovablesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :set_movable, only: %i[ show edit update destroy ]
 
   # GET /movables or /movables.json
   def index
+    @movable = policy_scope(Movable)
     if params[:categories]
       @movables = Movable.where(categories: params[:categories])
     else
@@ -12,21 +14,26 @@ class MovablesController < ApplicationController
 
   # GET /movables/1 or /movables/1.json
   def show
+    authorize @movable
   end
 
   # GET /movables/new
 
   def new
+    authorize @movable
     @movable = Movable.new
   end
 
   # GET /movables/1/edit
   def edit
+    authorize @movable
   end
 
   # POST /movables or /movables.json
   def create
     @movable = Movable.new(movable_params)
+    @movable.user = current_user
+    authorize @movable
 
     respond_to do |format|
       if @movable.save
@@ -41,6 +48,7 @@ class MovablesController < ApplicationController
 
   # PATCH/PUT /movables/1 or /movables/1.json
   def update
+    authorize @movable
     respond_to do |format|
       if @movable.update(movable_params)
         format.html { redirect_to movable_url(@movable), notice: "Movable was successfully updated." }
@@ -54,6 +62,7 @@ class MovablesController < ApplicationController
 
   # DELETE /movables/1 or /movables/1.json
   def destroy
+    authorize @movable
     @movable.destroy
 
     respond_to do |format|
@@ -70,6 +79,6 @@ class MovablesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movable_params
-      params.require(:movable).permit(:name, :description, :min_rent_time, :max_rent_time, :main_image, :stock, :price, :user_id, :categories, gallery_image: [])
+      params.require(:movable).permit(:name, :description, :min_rent_time, :max_rent_time, :main_image, :stock, :price, :categories, gallery_image: [])
     end
 end

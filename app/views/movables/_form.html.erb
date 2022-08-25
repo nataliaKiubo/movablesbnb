@@ -12,7 +12,6 @@
     <%= f.input :gallery_image, as: :file, input_html: { multiple: true } %>
     <%= f.input :stock %>
     <%= f.input :price %>
-    <%= f.association :user %>
     <%= f.input :categories, collection: %w(Armchairs Sofas Chairs Tables Lights Rugs Beds Decorations Plants) %>
   </div>
 
