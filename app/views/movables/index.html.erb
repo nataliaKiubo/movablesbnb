@@ -10,7 +10,7 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= movable.name %></h2>
-          <p><%= movable.description %></p>
+          <p><%= movable.description.first(15) %></p>
         </div>
         <h2 class="card-trip-pricing"><%= movable.price %> CHF / day</h2>
         <%# <%= cl_image_tag current_user.photo.key, crop: :fill, class: "card-trip-user avatar" %>

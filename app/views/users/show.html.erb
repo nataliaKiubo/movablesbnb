@@ -7,19 +7,19 @@
   <p>Joined in <%= @user.created_at.year %></p>
 
 
-<div class="map-container">
-  <div class="edit-part">
-    <%= render @user %>
-        <% if policy(@user).edit? %>
-          <%= link_to "Edit my profile", edit_user_path(@user), class: "edit-button" %>
-        <% end %>
+  <div class="map-container">
+    <div class="edit-part">
+      <%= render @user %>
+          <% if policy(@user).edit? %>
+            <%= link_to "Edit my profile", edit_user_path(@user), class: "edit-button" %>
+          <% end %>
+    </div>
+    <div class="map-profile"
+      data-controller="map"
+      data-map-markers-value="<%= Array(@markers).to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-  <div class="map-profile"
-    data-controller="map"
-    data-map-markers-value="<%= Array(@markers).to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
 
 <br>
 
