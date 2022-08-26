@@ -17,6 +17,7 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <% f.input :photo, default: "https://res.cloudinary.com/ddxqnyga2/image/upload/v1661437338/001-user_vutg9d.png" %>
     </div>
 
     <div class="form-actions">
