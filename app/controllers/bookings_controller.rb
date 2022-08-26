@@ -5,6 +5,12 @@ class BookingsController < ApplicationController
   #   authorize @booking
   # end
 
+  def index
+    @booking = policy_scope(Booking)
+    @bookings = Booking.where(user_id: current_user.id)
+    authorize @bookings
+  end
+
   def create
     @movable = Movable.find(params[:movable_id])
     @booking = Booking.new(booking_params)
@@ -14,16 +20,13 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to movable_url(@movable), notice: "Booking was successfully transferred." }
+        format.html { redirect_to bookings_path, notice: "Booking was successfull." }
         format.json { render :show, status: :created, location: @movable }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @movable.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def show
   end
 
   def delete

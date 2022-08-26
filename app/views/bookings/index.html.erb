@@ -1,0 +1,42 @@
+<div class="container">
+<h1>My Bookings</h1>
+<div class="container bookings-container">
+  <div class="row bookings-row">
+    <div class="col-sm bookings-header">
+      <span>Start Date</span>
+    </div>
+    <div class="col-sm bookings-header">
+      <span>End Date</span>
+    </div>
+    <div class="col-sm bookings-header">
+      <span>Movable</span>
+    </div>
+    <div class="col-sm bookings-header">
+      <span>Client</span>
+    </div>
+    <div class="col-sm bookings-header">
+      <span>Provider</span>
+    </div>
+  </div>
+
+  <% @bookings.each do |booking| %>
+    <div class="row bookings-row">
+      <div class="col-sm">
+        <%= booking.checkin_on %>
+      </div>
+      <div class="col-sm">
+        <%= booking.checkout_on %>
+      </div>
+      <div class="col-sm">
+        <%= booking.movable.name %>
+      </div>
+      <div class="col-sm">
+        <%= "#{booking.user.first_name} #{booking.user.last_name}" %>
+      </div>
+      <div class="col-sm">
+        <a href="<%= user_path(booking.movable.user) %>"><%= "#{booking.movable.user.first_name} #{booking.movable.user.last_name}" %></a>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :movables do
     resources :bookings
   end
+  resources :bookings, only: :index
   devise_for :users
   root to: "pages#home"
   resources :users
