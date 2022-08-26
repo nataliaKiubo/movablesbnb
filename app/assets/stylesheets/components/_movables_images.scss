@@ -7,7 +7,7 @@
   background: #fff;
 }
 .gallery-wall {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1%;
@@ -36,14 +36,73 @@
 .movable-description {
   align-items: center;
   justify-content: center;
+  background: #fff;
+  padding: 4%;
+  width: 69%;
+  margin-right: 1%;
+  border-radius: 2%;
 }
 
 .movable-description h2 {
 font-size: 20px;
 }
 
+.movable-provider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 25px;
+}
+
+.main-image {
+  background: #fff;
+}
+
 .main-image>img{
   width: 100%;
   margin-right: 1%;
   background: #fff;
+}
+
+.gallery-wall img:first-child {
+  margin-top: 0 !important;
+}
+
+
+.movable-description h2, .movable-description .h2 {
+  margin-bottom: 0;
+}
+
+
+.description.container {
+  padding: 0;
+  margin-top: 40px;
+}
+
+.row {
+  margin-top: 30px;
+}
+
+form#new_booking {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mb-3.date {
+  max-width: 49%;
+}
+
+input.btn.btn.signup-button {
+  width: 100%;
+  padding: 3%;
+}
+
+.mx-1 {
+  margin: 0 !important;
+}
+
+
+p.items-calc {
+  margin: 30px 0;
 }

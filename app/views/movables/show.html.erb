@@ -1,78 +1,66 @@
+<div class="container">
+
 <p style="color: green"><%= notice %></p>
 
-<%# <%= render @movable %>
-
-
-
-<div class="container">
 
 <h1><%= @movable.name %></h1>
 <div class="row">
-    <div class="main-image col-6">
-
-      <%= cl_image_tag @movable.main_image.key, crop: :fill %>
-
-    </div>
-
-
-    <div class="img col-2">
-
+    <div class="img col-1">
         <div class="gallery-wall">
         <% @movable.gallery_image.each do |gallery_image| %>
           <%= cl_image_tag gallery_image.key, crop: :fill %>
         <% end %>
         </div>
-
     </div>
-
+    <div class="main-image col-7">
+      <%= cl_image_tag @movable.main_image.key, crop: :fill %>
+    </div>
     <div class="col-4">
-
       <div style="width: 100%; height: 400px;"
         data-controller="map"
         data-map-markers-value="<%= Array(@markers).to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-
     </div>
 </div>
 
-
-
-
   <div class="description container">
 
-    <div class="movable-description row">
+    <div class="movable-description">
 
-      <div class="col-8">
-        <h2>This movable is offered by </h2>
+      <div class="movable-provider">
+        <h2 class="movable-h2"><strong>This movable is offered by <%= @movable.user.first_name %></strong></h2>
+        <%= cl_image_tag @movable.user.photo.key, class: "avatar" %>
       </div>
+      <p>
+        <strong><i class="fa-solid fa-clock"></i> Rent time: </strong>
+        <%= @movable.min_rent_time.to_i %> - <%= @movable.max_rent_time.to_i %> days
+      </p>
+        <strong><i class="fa-solid fa-cubes"></i> Stock:</strong>
+        <%= @movable.stock %>
+      </p>
+      <p style="padding-top: 15px;"><%= @movable.description %></p>
 
-      <div class="col-4">
-        <img src="https://i.im.ge/2022/08/26/OwO2JG.Captura-de-Tela-2022-08-24-as-16-43-15.md.png" class="img-thumbnail" alt="...">
-      </div>
-
-      <p><%= @movable.description %></p>
     </div>
 
     <div class="booking-part">
-    <p class="movable-price"><%= @movable.price %> CHF / day</p>
-  <%= simple_form_for([@movable, @booking]) do |f| %>
-    <%= f.input :checkin_on, as: :date, html5: true %>
-    <%= f.input :checkout_on, as: :date, html5: true %>
-    <%= f.submit %>
-  <% end %>
-    <p class="items-calc"><i class="fa-solid fa-minus" style="margin-right: 15px;"></i> Items <i class="fa-solid fa-plus" style="margin-left: 15px;"></i></p>
+      <p class="movable-price"><%= @movable.price %> CHF / day</p>
+
+      <p class="items-calc"><i class="fa-solid fa-minus" style="margin-right: 15px;"></i> Items <i class="fa-solid fa-plus" style="margin-left: 15px;"></i></p>
+
+        <%= simple_form_for([@movable, @booking]) do |f| %>
+          <%= f.input :checkin_on, as: :date, html5: true, label: "From" %>
+          <%= f.input :checkout_on, as: :date, html5: true, label: "To" %>
+          <%= f.button :submit, class: "btn signup-button" %>
+        <% end %>
     </div>
 
     </div>
-
-
     <div>
       <% if policy(@movable).edit? %>
       <%=link_to "Edit this movable", edit_movable_path(@movable) %> |
       <% end %>
       <%= link_to "Back to movables", movables_path %>
-
       <%= button_to "Destroy this movable", @movable, method: :delete if policy(@movable).destroy? %>
     </div>
   </div>

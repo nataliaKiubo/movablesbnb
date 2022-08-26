@@ -1,6 +1,14 @@
 * {
   margin: 0;
 }
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -35,11 +43,6 @@
   margin: 50px auto;
 }
 
-
-.movable-description {
-  width: 66%;
-  margin-right: 4%;
-}
 
 .movable-description p {
   text-align: justify;
