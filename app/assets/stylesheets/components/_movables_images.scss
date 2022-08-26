@@ -62,6 +62,8 @@ font-size: 20px;
   width: 100%;
   margin-right: 1%;
   background: #fff;
+  max-height: 415px;
+  object-fit: contain;
 }
 
 .gallery-wall img:first-child {
@@ -93,11 +95,6 @@ form#new_booking {
   max-width: 49%;
 }
 
-input.btn.btn.signup-button {
-  width: 100%;
-  padding: 3%;
-}
-
 .mx-1 {
   margin: 0 !important;
 }
@@ -105,4 +102,9 @@ input.btn.btn.signup-button {
 
 p.items-calc {
   margin: 30px 0;
+}
+
+#new_booking > input.btn.btn.signup-button{
+  width: 100%;
+  padding: 3%;
 }
