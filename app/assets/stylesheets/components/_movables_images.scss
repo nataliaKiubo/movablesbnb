@@ -11,6 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1%;
+  flex-direction: column;
 
   img:nth-child(2) {
     border-radius: 0 8% 0 0;
@@ -18,9 +19,31 @@
 }
 
 .gallery-wall img {
-  max-width: 48%;
+  max-width: 100%;
+  margin-top: 10px;
 }
 
 .description {
   display: flex;
+}
+
+// This is the image of the user inside of movable description
+.img-thumbnail {
+  border-radius: 40px;
+  width: 60px;
+}
+
+.movable-description {
+  align-items: center;
+  justify-content: center;
+}
+
+.movable-description h2 {
+font-size: 20px;
+}
+
+.main-image>img{
+  width: 100%;
+  margin-right: 1%;
+  background: #fff;
 }
