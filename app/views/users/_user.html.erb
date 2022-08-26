@@ -1,6 +1,10 @@
 <div>
   <div>
-  <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
+  <% if current_user.photo.key == nil %>
+    <%= image_tag "https://res.cloudinary.com/ddxqnyga2/image/upload/v1661437338/001-user_vutg9d.png", class: "avatar-bordered" %>
+  <% else %>
+    <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
+  <% end %>
   </div>
   <%# <p>
     <strong>First name:</strong>
