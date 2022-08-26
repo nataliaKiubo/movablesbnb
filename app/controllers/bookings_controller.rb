@@ -7,7 +7,11 @@ class BookingsController < ApplicationController
 
   def index
     @booking = policy_scope(Booking)
-    @bookings = Booking.where(user_id: current_user.id)
+    sql_query = <<~SQL
+      bookings.user_id = :query
+      OR movables.user_id = :query
+    SQL
+    @bookings = Booking.joins(:movable).where(sql_query, query: current_user.id)
     authorize @bookings
   end
 
