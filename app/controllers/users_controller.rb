@@ -4,14 +4,6 @@ class UsersController < ApplicationController
   # Structure made by lewagon - Geocode lecture
   def index
     @users = User.all
-    # The `geocoded` scope filters only flats/user with coordinates
-    @markers = @users.geocoded.map do |user|
-      {
-        lat: user.latitude,
-        lng: user.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { user: current_user })
-      }
-    end
   end
   # end of index test structure
 
