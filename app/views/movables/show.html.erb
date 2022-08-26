@@ -3,20 +3,56 @@
 <%# <%= render @movable %>
 
 
+
 <div class="container">
-  <h1><%= @movable.name %></h1>
-  <div class="images">
-    <%= cl_image_tag @movable.main_image.key, crop: :fill %>
-    <div class="gallery-wall">
-    <% @movable.gallery_image.each do |gallery_image| %>
-      <%= cl_image_tag gallery_image.key, crop: :fill %>
-    <% end %>
+
+<h1><%= @movable.name %></h1>
+<div class="row">
+    <div class="main-image col-6">
+
+      <%= cl_image_tag @movable.main_image.key, crop: :fill %>
+
     </div>
-  </div>
+
+
+    <div class="img col-2">
+
+        <div class="gallery-wall">
+        <% @movable.gallery_image.each do |gallery_image| %>
+          <%= cl_image_tag gallery_image.key, crop: :fill %>
+        <% end %>
+        </div>
+
+    </div>
+
+    <div class="col-4">
+
+      <div style="width: 100%; height: 400px;"
+        data-controller="map"
+        data-map-markers-value="<%= Array(@markers).to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+    </div>
+</div>
+
+
+
 
   <div class="description container">
-    <div class="movable-description">
-    <p><%= @movable.description %></p></div>
+
+    <div class="movable-description row">
+
+      <div class="col-8">
+        <h2>This movable is offered by </h2>
+      </div>
+
+      <div class="col-4">
+        <img src="https://i.im.ge/2022/08/26/OwO2JG.Captura-de-Tela-2022-08-24-as-16-43-15.md.png" class="img-thumbnail" alt="...">
+      </div>
+
+      <p><%= @movable.description %></p>
+    </div>
 
     <div class="booking-part">
     <p class="movable-price"><%= @movable.price %> CHF / day</p>
@@ -25,7 +61,7 @@
     <%= f.input :checkout_on, as: :date, html5: true %>
     <%= f.submit %>
   <% end %>
-     <p class="items-calc"><i class="fa-solid fa-minus" style="margin-right: 15px;"></i> Items <i class="fa-solid fa-plus" style="margin-left: 15px;"></i></p>
+    <p class="items-calc"><i class="fa-solid fa-minus" style="margin-right: 15px;"></i> Items <i class="fa-solid fa-plus" style="margin-left: 15px;"></i></p>
     </div>
 
     </div>
@@ -40,12 +76,5 @@
       <%= button_to "Destroy this movable", @movable, method: :delete if policy(@movable).destroy? %>
     </div>
   </div>
-
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= Array(@markers).to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
 
 </div>
