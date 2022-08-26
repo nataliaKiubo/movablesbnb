@@ -6,24 +6,22 @@
   <% end %>
   <p>Joined in <%= @user.created_at.year %></p>
 
- <div class="edit-part">
+
+<div class="map-container">
+  <div class="edit-part">
     <%= render @user %>
-
-    <div>
-    <% if policy(@user).edit? %>
-      <%= link_to "Edit my profile", edit_user_path(@user), class: "edit-button" %>
-    <% end %>
-    </div>
+        <% if policy(@user).edit? %>
+          <%= link_to "Edit my profile", edit_user_path(@user), class: "edit-button" %>
+        <% end %>
   </div>
-
-
-  <div style="width: 100%; height: 600px;"
+  <div class="map-profile"
     data-controller="map"
     data-map-markers-value="<%= Array(@markers).to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+</div>
 
-  <br>
+<br>
 
   <% if @user == @current_user%>
     <h4> My listing</h4>

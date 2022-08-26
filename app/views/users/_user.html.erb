@@ -2,24 +2,23 @@
   <div>
   <%= cl_image_tag user.photo.key, class: "avatar-bordered" %>
   </div>
-  <br>
-  <p>
+  <%# <p>
     <strong>First name:</strong>
     <%= user.first_name %>
-  </p>
+  <%# </p>
   <p>
     <strong>Last name:</strong>
     <%= user.last_name %>
-  </p>
+  <%# </p> %>
+
+
+  <ul class="li.title">
+    <li><strong>First name:</strong></li>
+    <%= user.first_name %>
+    <li><strong>Last name:</strong></li>
+    <%= user.last_name %>
+  </ul>
+
+
+
 </div>
-
-
-<%# .avatar-bordered {
-  width: 100px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
-  margin-bottom: 20px;
-  justify-content: "center";
-  display: "flex";
-} %>
