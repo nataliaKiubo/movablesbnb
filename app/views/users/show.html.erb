@@ -1,16 +1,48 @@
 <div class="container">
- <div class="edit-part">
+ <% if @user == @current_user%>
+    <h4> My personal information</h4>
+  <% else %>
+    <h4> Hi, I'm <%= @user.first_name%></h4>
+  <% end %>
+  <p>Joined in <%= @user.created_at.year %></p>
+
+
+<div class="map-container">
+  <div class="edit-part">
     <%= render @user %>
-
-    <div>
-    <% if policy(@user).edit? %>
-      <%= link_to "Edit my profile", edit_user_path(@user), class: "edit-button" %>
-    <% end %>
-
-    </div>
+        <% if policy(@user).edit? %>
+          <%= link_to "Edit my profile", edit_user_path(@user), class: "edit-button" %>
+        <% end %>
+  </div>
+  <div class="map-profile"
+    data-controller="map"
+    data-map-markers-value="<%= Array(@markers).to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
+<br>
 
-<%# try to build here %>
-<%# or try on movables show %>
+  <% if @user == @current_user%>
+    <h4> My listing</h4>
+  <% else %>
+    <h4> <%= @user.first_name%>'s listing</h4>
+  <% end %>
+
+
+  <div class="cards">
+  <% @movables.each do |movable| %>
+    <a class="card-trip" href="<%= movable_path(movable.id) %>">
+      <%= cl_image_tag movable.main_image.key, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= movable.name %></h2>
+          <p><%= movable.description %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= movable.price %> CHF / day</h2>
+        <%# <%= cl_image_tag current_user.photo.key, crop: :fill, class: "card-trip-user avatar" %>
+      </div>
+    </a>
+  <% end %>
+  </div>
+</div>

@@ -6,3 +6,36 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
+
+.map-profile {
+  width: 33%;
+  height: 330px;
+  padding: 4%;
+  border-radius: 4%;
+  flex: 80%;
+  margin: 0 5px;
+}
+
+
+.edit-part {
+  width: 33%;
+  height: 330px;
+  padding: 4%;
+  border-radius: 4%;
+  flex: 20%;
+  margin: 0 5px;
+  // background-color: #E9E9E9;
+}
+
+.map-container {
+  display: flex;
+  margin: 0 -5px;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
