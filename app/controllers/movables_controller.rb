@@ -15,7 +15,7 @@ class MovablesController < ApplicationController
   # GET /movables/1 or /movables/1.json
   def show
     authorize @movable
-
+    @booking = Booking.new
     # The `geocoded` scope filters only flats/user with coordinates
     @markers = [
       {
