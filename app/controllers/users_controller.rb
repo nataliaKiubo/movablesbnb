@@ -15,6 +15,14 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     authorize @user
+    @movables = Movable.where(user: @user)
+    @markers = [
+      {
+        lat: @user.latitude,
+        lng: @user.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: { user: @movable.user }),
+        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
+      }]
   end
 
 # PUT /users/1
